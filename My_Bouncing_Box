@@ -1,0 +1,34 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >zhumagazin_i</div>
+  <script type="text/javascript">
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+  d = document.getElementById("my_bouncing_box")
+  let x = 0;
+  let y = 0;
+  x_state = true;
+  y_state = true;
+  setInterval(()=>{
+      if (x_state == true){
+          x++;
+      }
+      else if (x_state == false){
+          x--;
+      }
+      if (x >= w - 100 || x < 0){
+          x_state = !x_state;
+      }
+      if (y_state == true){
+          y++;
+      }
+      else if (y_state == false){
+          y--;
+      }
+      if (y >= h - 100 || y < 0){
+          y_state = !y_state;
+      }
+      d.style.top = y;
+      d.style.left = x;
+  }, 1)
+  </script>
+</html>
